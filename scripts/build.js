@@ -17,6 +17,9 @@ fs.copySync('src/assets', 'build/assets', { overwrite: true });
 fs.copySync('src/styles', 'build/styles', { overwrite: true });
 fs.copySync('src/scripts', 'build/scripts', { overwrite: true });
 
+// Copy index.html directly
+fs.copySync('src/index.html', 'build/index.html', { overwrite: true });
+
 // Process Markdown files
 function processMarkdown(filePath) {
   const content = fs.readFileSync(filePath, 'utf-8');
@@ -35,7 +38,7 @@ const template = fs.readFileSync('src/templates/base.html', 'utf-8');
 // Process pages
 const pagesDir = 'src/content/pages';
 fs.readdirSync(pagesDir).forEach(file => {
-  if (file.endsWith('.md')) {
+  if (file.endsWith('.md') && file !== 'index.md') {  // Skip index.md if it exists
     const { metadata, content } = processMarkdown(path.join(pagesDir, file));
     const pageHtml = template
       .replace('{{title}}', metadata.title || 'My Site')
