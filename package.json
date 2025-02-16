@@ -1,0 +1,27 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "A simple static site built with HTML, CSS, JavaScript and Node.js",
+  "main": "scripts/build.js",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "serve": "serve build",
+    "start": "npm run build && npm run serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "static-site",
+    "blog",
+    "markdown"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^11.1.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^4.2.12"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
