@@ -22,11 +22,11 @@ document.querySelectorAll('nav a').forEach(link => {
 // Testimonial scroll functionality
 document.addEventListener('DOMContentLoaded', () => {
     const testimonialGrid = document.querySelector('.testimonial-grid');
-    const scrollLeftBtn = document.querySelector('.scroll-left');
-    const scrollRightBtn = document.querySelector('.scroll-right');
+    const scrollLeftBtn = document.querySelector('.testimonials .scroll-left');
+    const scrollRightBtn = document.querySelector('.testimonials .scroll-right');
 
     if (testimonialGrid && scrollLeftBtn && scrollRightBtn) {
-        const scrollAmount = 400; // Width of one testimonial card
+        const scrollAmount = 450; // Width of one testimonial card
 
         scrollLeftBtn.addEventListener('click', () => {
             testimonialGrid.scrollBy({
