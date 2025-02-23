@@ -17,12 +17,21 @@ body {
     line-height: 1.2;
     overflow-x: hidden;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/assets/images/beach-couple.jpg');
-    background-size: 120%;
-    background-position: center top;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+body.serving-you-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/images/beach-sunset-couple.jpg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .container {
@@ -77,10 +86,10 @@ body {
 .hero {
     min-height: 90vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-end;
     padding-right: 0;
-    padding-top: 8vh;
+    padding-top: 4vh;
     background: transparent;
     margin-bottom: 15vh;
 }
@@ -94,6 +103,9 @@ body {
     width: 100%;
     position: relative;
     right: -15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 h1 {
@@ -127,6 +139,9 @@ h1 {
     transition: all 0.3s ease;
     text-shadow: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: auto;
+    min-width: 150px;
+    text-align: center;
 }
 
 .cta-button:hover {
@@ -138,8 +153,12 @@ h1 {
 /* Responsive design */
 @media (max-width: 768px) {
     body {
-        background-size: cover;
-        background-position: center 20%;
+        background-size: auto 100vh;
+        background-position: 15% center;
+        background-attachment: fixed;
+        min-height: 100vh;
+        height: auto;
+        overflow-y: auto;
     }
 
     .logo {
@@ -150,26 +169,81 @@ h1 {
     .hero {
         padding-right: 1rem;
         padding-left: 1rem;
-        padding-top: 6vh;
-        justify-content: center;
-        margin-bottom: 10vh;
+        padding-top: 4vh;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-bottom: 0;
+        min-height: 90vh;
     }
     
     .hero-content {
         max-width: 100%;
         padding: 0;
         margin-top: 0;
+        right: 0;
+        text-align: right;
+        width: 100%;
     }
     
     h1 {
-        font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
         margin-bottom: 2rem;
         white-space: normal;
+        text-align: right;
+    }
+
+    .highlight {
+        text-align: right;
     }
 
     .newsletter-signup {
+        margin: 14rem 1rem 2rem;
+        padding: 1.5rem;
         right: 0;
-        margin: 3rem 1rem;
+        width: calc(100% - 2rem);
+        background: rgba(255, 255, 255, 0.2);
+        max-width: none;
+        position: relative;
+        z-index: 2;
+    }
+
+    .formkit-form[data-uid="1cdfac3be6"] .formkit-header h2 {
+        font-size: 1.3rem !important;
+        text-align: right !important;
+    }
+
+    .formkit-form[data-uid="1cdfac3be6"] .formkit-subheader {
+        text-align: right !important;
+    }
+
+    .formkit-form[data-uid="1cdfac3be6"] .formkit-subheader p {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .formkit-form[data-uid="1cdfac3be6"] .formkit-fields {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+    }
+
+    .formkit-form[data-uid="1cdfac3be6"] .formkit-input {
+        padding: 0.875rem !important;
+    }
+
+    .formkit-form[data-uid="1cdfac3be6"] .formkit-submit {
+        width: 100% !important;
+        padding: 0.875rem !important;
+    }
+
+    .formkit-form[data-uid="1cdfac3be6"] .formkit-guarantee {
+        text-align: right !important;
+    }
+
+    .cta-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+        display: inline-block;
+        text-align: center;
     }
 }
 
@@ -389,7 +463,7 @@ footer {
 }
 
 .newsletter-signup {
-    margin-top: 8rem;
+    margin-top: 16rem;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -514,7 +588,7 @@ footer {
 
 @media (max-width: 768px) {
     .newsletter-signup {
-        margin: 5rem 1rem;
+        margin: 14rem 1rem 2rem;
         padding: 1.5rem;
     }
     
@@ -559,8 +633,8 @@ footer {
     line-height: 1.4;
     font-weight: 500;
     text-align: center;
-    color: var(--white);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: var(--black);
+    text-shadow: none;
 }
 
 .testimonial-overlay cite {
@@ -570,6 +644,7 @@ footer {
     font-style: normal;
     text-align: center;
     opacity: 0.9;
+    color: var(--black);
 }
 
 @media (max-width: 768px) {
@@ -583,6 +658,190 @@ footer {
     }
     
     .testimonial-overlay cite {
+        font-size: 1rem;
+    }
+}
+
+/* Tablet/iPad Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        background-size: cover;
+        background-position: 25% center;
+        background-attachment: fixed;
+    }
+
+    .hero {
+        min-height: 85vh;
+        padding-right: 2rem;
+        padding-top: 4vh;
+        justify-content: flex-end;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        right: -2rem;
+        padding-left: 2rem;
+        text-align: right;
+        width: 65%;
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 5vw, 3rem);
+        white-space: normal;
+        margin-bottom: 2.5rem;
+        text-align: right;
+    }
+
+    .highlight {
+        text-align: right;
+    }
+
+    .newsletter-signup {
+        margin: 12rem 2rem 3rem auto;
+        max-width: 500px;
+        padding: 2rem;
+        right: -2rem;
+    }
+
+    .cta-button {
+        margin-right: 0;
+    }
+
+    .testimonial-overlay {
+        margin: -12vh auto 0;
+        padding: 2rem;
+        max-width: 800px;
+    }
+
+    .testimonial-overlay blockquote {
+        font-size: 1.3rem;
+    }
+
+    .featured-in .container {
+        padding: 2.5rem;
+    }
+
+    .logo-grid {
+        gap: 3.5rem;
+    }
+
+    .featured-logo {
+        height: 40px;
+    }
+
+    .featured-logo.larger {
+        height: 50px;
+    }
+}
+
+/* Serving You Page Styles */
+.serving-you-content {
+    max-width: 1200px;
+    margin: 8rem auto 4rem;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    padding: 3rem;
+    background: rgba(242, 235, 230, 0.95);
+    border-radius: 12px;
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.service-card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--black);
+    font-family: 'Poppins', sans-serif;
+}
+
+.service-intro {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    font-weight: 500;
+    color: var(--black);
+    opacity: 0.9;
+}
+
+.service-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.service-features {
+    list-style: none;
+    margin: 1.5rem 0;
+    padding-left: 0;
+}
+
+.service-features li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    color: var(--black);
+    font-size: 1.1rem;
+}
+
+.service-features li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--black);
+}
+
+.service-card .contact-button {
+    display: inline-block;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    width: fit-content;
+}
+
+.service-card .contact-button:hover {
+    background-color: var(--neon-yellow);
+    color: var(--black);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .serving-you-content {
+        margin: 6rem 1rem 2rem;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .service-card {
+        padding: 2rem;
+    }
+
+    .service-card h2 {
+        font-size: 1.8rem;
+    }
+
+    .service-intro {
+        font-size: 1.1rem;
+    }
+
+    .service-features li {
         font-size: 1rem;
     }
 } 

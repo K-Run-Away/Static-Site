@@ -17,8 +17,12 @@ fs.copySync('src/assets', 'build/assets', { overwrite: true });
 fs.copySync('src/styles', 'build/styles', { overwrite: true });
 fs.copySync('src/scripts', 'build/scripts', { overwrite: true });
 
-// Copy index.html directly
-fs.copySync('src/index.html', 'build/index.html', { overwrite: true });
+// Copy all HTML files from src
+fs.readdirSync('src').forEach(file => {
+  if (file.endsWith('.html')) {
+    fs.copySync(`src/${file}`, `build/${file}`, { overwrite: true });
+  }
+});
 
 // Process Markdown files
 function processMarkdown(filePath) {
