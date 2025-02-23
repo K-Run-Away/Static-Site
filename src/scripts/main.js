@@ -17,4 +17,29 @@ document.querySelectorAll('nav a').forEach(link => {
     if (link.getAttribute('href') === currentPath) {
         link.classList.add('active');
     }
+});
+
+// Testimonial scroll functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const testimonialGrid = document.querySelector('.testimonial-grid');
+    const scrollLeftBtn = document.querySelector('.scroll-left');
+    const scrollRightBtn = document.querySelector('.scroll-right');
+
+    if (testimonialGrid && scrollLeftBtn && scrollRightBtn) {
+        const scrollAmount = 400; // Width of one testimonial card
+
+        scrollLeftBtn.addEventListener('click', () => {
+            testimonialGrid.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        scrollRightBtn.addEventListener('click', () => {
+            testimonialGrid.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    }
 }); 
