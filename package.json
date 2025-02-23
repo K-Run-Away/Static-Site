@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "serve": "serve build",
-    "dev": "npm run build && (pkill -f 'node.*serve' || true) && npm run serve",
+    "dev": "npm run build && npm run serve",
     "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
