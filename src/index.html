@@ -141,6 +141,12 @@
                     </div>
 
                     <div class="testimonial-card">
+                        <p class="testimonial-text">"Kurren's mastery of the spoken word has been shown throughout his time as a trainee doctor - imparting wisdom to his peers in his own unique way. He most successfully demonstrated this in his spoken word poetry in a Dragon's Den event mesmerizing the audience with his cadence, flow enhancing his narration. The reflection by the audience after he finished can only be thought as overwhelmingly positive. Don't miss out on hearing Kurren yourself!"</p>
+                        <p class="testimonial-author">Dr Hassan</p>
+                        <p class="testimonial-role">Training Programme Director</p>
+                    </div>
+
+                    <div class="testimonial-card">
                         <p class="testimonial-text">"Kurren was a fantastic guest speaker for an actuarial session I hosted. Despite the virtual setting, he brought energy, enthusiasm, and valuable insights. His adaptability and passion were evident, especially given the short notice and limited time slot for his presentation. It was great to present with him and look forward to collaborating again soon."</p>
                         <p class="testimonial-author">Shivam</p>
                         <p class="testimonial-role">Aptuary</p>
@@ -163,9 +169,38 @@
         </div>
     </section>
 
-    <section class="help-section">
-        <div class="container">
-            <a href="serving-you.html" class="cta-button highlight">HOW CAN I HELP? →</a>
+    <section class="serving-you-content">
+        <div class="service-card">
+            <h2>Performance or Talk</h2>
+            <p class="service-intro">Shake up your event with a captivating live performance or an engaging talk or a mix between the two!</p>
+            <ul class="service-features">
+                <li>Personal growth and health themed</li>
+                <li>Special bespoke piece included</li>
+                <li>Live or Virtual</li>
+            </ul>
+            <a href="serving-you.html#contact-form-section" class="contact-button">Get in touch →</a>
+        </div>
+
+        <div class="service-card">
+            <h2>Immersive Wellbeing Experience</h2>
+            <p class="service-intro">The most enjoyable wellbeing workshop your team will ever have.</p>
+            <ul class="service-features">
+                <li>Evidence-based tips from a practising GP and Lifestyle Medicine expert</li>
+                <li>Interactive workshop tailored to your needs</li>
+                <li>Live or virtual</li>
+            </ul>
+            <a href="serving-you.html#contact-form-section" class="contact-button">Get in touch →</a>
+        </div>
+
+        <div class="service-card">
+            <h2>Personalised Spoken Word Piece</h2>
+            <p class="service-intro">Make your ad or business unforgettable with a spoken word piece crafted just for you.</p>
+            <ul class="service-features">
+                <li>Text and audio file</li>
+                <li>Live or Virtual</li>
+                <li>Performance if desired</li>
+            </ul>
+            <a href="serving-you.html#contact-form-section" class="contact-button">Get in touch →</a>
         </div>
     </section>
 
@@ -182,17 +217,52 @@
         </div>
     </section>
 
-    <section class="content-section reverse">
+    <section class="video-showcase">
         <div class="container">
-            <div class="media-content">
-                <img src="/assets/images/Circle Feedback Graphic (1).png" alt="Feedback from virtual performance" loading="lazy">
-            </div>
-            <div class="text-content">
-                <h2>More Feedback</h2>
-                <p>I was blessed to receive this feedback from my last virtual performance 🙏🏽</p>
+            <h2>Watch Kurren in Action</h2>
+            <div class="video-carousel">
+                <div class="video-item" data-video-id="lneNAK6Vrso">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/lneNAK6Vrso/maxresdefault.jpg" alt="Video thumbnail" loading="lazy">
+                        <div class="play-button">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.7)"/>
+                                <path d="M10 8l6 4-6 4V8z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Performance Video</h3>
+                        <p>Click to watch Kurren's spoken word performance</p>
+                    </div>
+                </div>
+
+                <div class="video-item" data-video-id="muP1P3DTg9c">
+                    <div class="video-thumbnail">
+                        <img src="https://img.youtube.com/vi/muP1P3DTg9c/maxresdefault.jpg" alt="Video thumbnail" loading="lazy">
+                        <div class="play-button">
+                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" fill="rgba(0,0,0,0.7)"/>
+                                <path d="M10 8l6 4-6 4V8z" fill="white"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h3>Performance Video</h3>
+                        <p>Click to watch Kurren's spoken word performance</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div id="videoContainer"></div>
+        </div>
+    </div>
 
     <script src="/scripts/main.js"></script>
     <script>
@@ -211,6 +281,100 @@
                 });
             }
         }
+
+        // Video carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoItems = document.querySelectorAll('.video-item');
+            const videoModal = document.getElementById('videoModal');
+            const videoContainer = document.getElementById('videoContainer');
+            const closeModal = document.getElementById('closeModal');
+
+            videoItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video-id');
+                    const iframe = document.createElement('iframe');
+                    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1&showinfo=0&fs=1&controls=1&disablekb=0&iv_load_policy=3&cc_load_policy=0&origin=${window.location.origin}`;
+                    iframe.width = '800';
+                    iframe.height = '450';
+                    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                    iframe.setAttribute('frameborder', '0');
+                    
+                    // Create a click-blocking overlay for the top-left area where channel info appears
+                    const overlay = document.createElement('div');
+                    overlay.style.position = 'absolute';
+                    overlay.style.top = '0';
+                    overlay.style.left = '0';
+                    overlay.style.width = '200px';
+                    overlay.style.height = '60px';
+                    overlay.style.backgroundColor = 'transparent';
+                    overlay.style.zIndex = '10';
+                    overlay.style.cursor = 'default';
+                    
+                    const videoWrapper = document.createElement('div');
+                    videoWrapper.style.position = 'relative';
+                    videoWrapper.appendChild(iframe);
+                    videoWrapper.appendChild(overlay);
+                    
+                    videoContainer.innerHTML = '';
+                    videoContainer.appendChild(videoWrapper);
+                    
+                    videoContainer.innerHTML = '';
+                    videoContainer.appendChild(iframe);
+                    videoModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            closeModal.addEventListener('click', function() {
+                videoModal.classList.remove('active');
+                videoContainer.innerHTML = '';
+                document.body.style.overflow = 'auto';
+            });
+
+            videoModal.addEventListener('click', function(e) {
+                if (e.target === videoModal) {
+                    videoModal.classList.remove('active');
+                    videoContainer.innerHTML = '';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                    videoModal.classList.remove('active');
+                    videoContainer.innerHTML = '';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
     </script>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="/serving-you">Book Kurren</a>
+                    <a href="serving-you.html#contact-form-section">Contact</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/kurren-sandhu-766107133/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z" fill="#222"/></svg>
+                    </a>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-credits">
+                        <p>© Dr Kurren Sandhu 2024. All rights reserved.</p>
+                        <p>Powered by <a href="https://cursor.sh" target="_blank" rel="noopener">Cursor AI</a></p>
+                    </div>
+                                    <div class="footer-policies">
+                    <a href="/privacy-policy">Privacy Policy</a>
+                    <span class="separator">/</span>
+                    <a href="/disclaimer">Disclaimer</a>
+                </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html> 

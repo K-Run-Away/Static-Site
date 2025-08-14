@@ -849,6 +849,11 @@ footer {
     flex-wrap: wrap;
 }
 
+/* Override margin for homepage service cards */
+body:not(.serving-you-page) .serving-you-content {
+    margin: 0 auto 1.5rem;
+}
+
 .service-card {
     flex: 1;
     min-width: 300px;
@@ -1622,5 +1627,629 @@ footer {
 
     .featured-logo.larger {
         height: 50px;
+    }
+}
+
+/* Footer Styles */
+.site-footer {
+    background: rgba(242, 235, 230, 0.95);
+    padding: 3rem 0;
+    margin-top: auto;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.site-footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.footer-links a {
+    color: var(--black);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--black);
+    opacity: 0.7;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.social-icon img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0);
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer-credits {
+    color: var(--black);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-credits a {
+    color: var(--black);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-credits a:hover {
+    opacity: 0.7;
+}
+
+.footer-policies {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.footer-policies a {
+    color: var(--black);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.footer-policies a:hover {
+    opacity: 1;
+}
+
+.footer-policies .separator {
+    color: var(--black);
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 2rem 0;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .footer-bottom {
+        gap: 1.5rem;
+    }
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 4rem 0;
+    background: transparent;
+}
+
+.contact-form-section .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    margin: 0 auto;
+    background: rgba(242, 235, 230, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 24px;
+    width: 100%;
+    max-width: none;
+}
+
+.contact-form .formkit-header h2 {
+    color: var(--black) !important;
+    font-size: 2rem !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+}
+
+.contact-form .formkit-subheader {
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+}
+
+.contact-form .formkit-subheader p {
+    color: var(--black) !important;
+    font-size: 1.1rem !important;
+    opacity: 0.9 !important;
+}
+
+.contact-form .formkit-fields {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+}
+
+.contact-form .formkit-input {
+    width: 100% !important;
+    padding: 1rem !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    color: var(--black) !important;
+    font-size: 1rem !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.contact-form textarea.formkit-input {
+    min-height: 120px !important;
+    resize: vertical !important;
+}
+
+.contact-form .formkit-submit {
+    width: 100% !important;
+    padding: 1rem !important;
+    background: var(--black) !important;
+    color: var(--white) !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    margin-top: 1rem !important;
+}
+
+.contact-form .formkit-submit:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+.contact-form .formkit-guarantee {
+    text-align: center !important;
+    color: var(--black) !important;
+    opacity: 0.7 !important;
+    font-size: 0.9rem !important;
+    margin-top: 1.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .contact-form-section {
+        padding: 2rem 1rem;
+    }
+
+    .contact-form {
+        padding: 2rem;
+    }
+
+    .contact-form .formkit-header h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .contact-form .formkit-subheader p {
+        font-size: 1rem !important;
+    }
+} 
+
+/* Video Showcase Section */
+.video-showcase {
+    padding: 4rem 0;
+    background: transparent;
+}
+
+.video-showcase .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.video-showcase h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--black);
+    font-family: 'Poppins', sans-serif;
+}
+
+.video-carousel {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.video-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    background: rgba(242, 235, 230, 0.95);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.video-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.video-item:hover .video-thumbnail img {
+    transform: scale(1.05);
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.video-item:hover .play-button {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.video-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+}
+
+.video-info p {
+    font-size: 1rem;
+    color: var(--black);
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Video Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-modal-content {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.video-modal iframe {
+    border: none;
+    border-radius: 8px;
+}
+
+.close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-modal:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .video-showcase {
+        padding: 2rem 0;
+    }
+
+    .video-showcase .container {
+        padding: 0 1rem;
+    }
+
+    .video-showcase h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .video-carousel {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .video-item {
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .video-thumbnail {
+        height: 200px;
+    }
+
+    .video-info {
+        padding: 1rem;
+    }
+
+    .video-info h3 {
+        font-size: 1.25rem;
+    }
+} 
+
+/* Privacy Policy Page Styles */
+.policy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.policy-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--black);
+    text-align: center;
+}
+
+.policy-content .last-updated {
+    text-align: center;
+    color: var(--black);
+    opacity: 0.7;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.policy-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem 0;
+    color: var(--black);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.policy-content p {
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.policy-content ul {
+    margin: 1rem 0 1rem 2rem;
+}
+
+.policy-content li {
+    margin-bottom: 0.5rem;
+    color: var(--black);
+}
+
+.policy-content a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.policy-content a:hover {
+    text-decoration: underline;
+}
+
+/* Disclaimer Page Specific Styles */
+.disclaimer-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    text-align: left;
+}
+
+.disclaimer-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--black);
+    text-align: center;
+}
+
+.disclaimer-content p {
+    margin-bottom: 1.5rem;
+    color: var(--black);
+    text-align: left;
+}
+
+.disclaimer-content ul {
+    margin: 1.5rem 0 1.5rem 2rem;
+}
+
+.disclaimer-content li {
+    margin-bottom: 0.75rem;
+    color: var(--black);
+    text-align: left;
+}
+
+/* Force override any conflicting styles */
+body .disclaimer-content {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    text-align: left !important;
+    padding: 0 2rem !important;
+}
+
+body .disclaimer-content p {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+body .disclaimer-content ul {
+    text-align: left !important;
+    margin-left: 2rem !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+body .disclaimer-content li {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Override content-section flexbox for disclaimer page */
+body .content-section .disclaimer-content {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important; /* Added this for consistency */
+}
+
+/* Make main H1 headings smaller on policy and disclaimer pages */
+body .content-section h1 {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 1.5rem !important;
+    color: var(--black) !important;
+    text-align: center !important;
+}
+
+/* Make H2 section headings smaller too */
+body .content-section h2 {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    margin: 1.5rem 0 1rem 0 !important;
+    color: var(--black) !important;
+}
+
+body .content-section p { /* Added this for consistency */
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Override the container flexbox layout for disclaimer */
+body .content-section:has(.disclaimer-content) .container {
+    display: block !important;
+    flex-direction: unset !important;
+    align-items: unset !important;
+    justify-content: unset !important;
+    gap: unset !important;
+}
+
+/* Override the container flexbox layout for privacy policy */
+body .content-section:has(.policy-content) .container {
+    display: block !important;
+    flex-direction: unset !important;
+    align-items: unset !important;
+    justify-content: unset !important;
+    gap: unset !important;
+}
+
+/* Ensure policy content displays properly */
+body .content-section .policy-content {
+    flex: none !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+@media (max-width: 768px) {
+    .policy-content h1,
+    .disclaimer-content h1 {
+        font-size: 2rem;
+    }
+    
+    .policy-content h2 {
+        font-size: 1.25rem;
+    }
+    
+    .policy-content,
+    .disclaimer-content {
+        padding: 0 1rem;
     }
 } 

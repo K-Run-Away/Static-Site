@@ -8,7 +8,7 @@ Hello! I'm [Your Name], and I'm excited to share my thoughts and experiences wit
 
 ## What I Do
 
-I specialize in [your specialties/interests]. Through this website, I share my knowledge, experiences, and insights about these topics.
+I specialize in [your specialties/interests]. Through this website, I share my knowledge, experiences, and insights about these topics. Spoken spoken.
 
 ## My Background
 
